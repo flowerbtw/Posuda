@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Posuda
+namespace Posuda.pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для AdminCatalogPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AdminCatalogPage : Page
     {
-        public MainWindow()
+        public AdminCatalogPage()
         {
             InitializeComponent();
-            MainFrame.Navigate(new LoginPage());
         }
     }
 }
