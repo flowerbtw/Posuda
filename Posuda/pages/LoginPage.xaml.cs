@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Posuda.db;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Posuda.pages
@@ -41,13 +42,11 @@ namespace Posuda.pages
             string enteredLogin = LoginTextBox.Text;
             string enteredPassword = PasswordTextBox.Text;
 
-            bool checkCredentials = DbConnect.dB.User.FirstOrDefault(p => p.Login == login && p.Password == password);
+            User user = DbConnect.dB.Users.FirstOrDefault(p => p.Login == enteredLogin && p.Password == enteredPassword);
 
-            if (checkCredentials)
+            if (user != null)
             {
-                Profile userProfile = DbConnect.dB.User.FirstOrDefault(p => p.Login == enteredLogin && p.Password == enteredPassword);
-
-                bool isAdmin = userProfile != null && userProfile.Role == "Администратор";
+                bool isAdmin = user.Role == "Администратор";
                 /*bool isManager = userProfile != null && userProfile.Role == "Менеджер";*/
 
                 if (isAdmin)

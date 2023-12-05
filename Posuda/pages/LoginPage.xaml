@@ -145,8 +145,8 @@
             Content="ВОЙТИ"
             FontSize="32px"
             Style="{StaticResource RoundedButtonStyle}"
-            Margin="150 15 150 15"/>
-
+            Margin="150 15 150 15"
+            Click="LoginButton_Click"/>
 
         <TextBlock
             Name="ForgotPassword"
